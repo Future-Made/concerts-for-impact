@@ -1,4 +1,4 @@
-defmodule TuneWeb.ConnCase do
+defmodule FutureMadeConcertsWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -11,7 +11,7 @@ defmodule TuneWeb.ConnCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use TuneWeb.ConnCase, async: true`, although
+  by setting `use FutureMadeConcertsWeb.ConnCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -22,12 +22,12 @@ defmodule TuneWeb.ConnCase do
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
-      import TuneWeb.ConnCase
+      import FutureMadeConcertsWeb.ConnCase
 
-      alias TuneWeb.Router.Helpers, as: Routes
+      alias FutureMadeConcertsWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
-      @endpoint TuneWeb.Endpoint
+      @endpoint FutureMadeConcertsWeb.Endpoint
     end
   end
 

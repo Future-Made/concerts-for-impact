@@ -1,12 +1,22 @@
 use Mix.Config
 
+# Configure your database
+config :FutureMadeConcerts, FutureMadeConcerts.Repo,
+  username: "postgres",
+  password: "postgres",
+  database: "future_made_concerts_dev",
+  hostname: "localhost",
+  show_sensitive_data_on_connection_error: true,
+  pool_size: 10
+
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :tune, TuneWeb.Endpoint,
+config :FutureMadeConcerts, FutureMadeConcertsWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -46,12 +56,12 @@ config :tune, TuneWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :tune, TuneWeb.Endpoint,
+config :FutureMadeConcerts, FutureMadeConcertsWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
-      ~r"lib/tune_web/(live|views)/.*(ex)$",
-      ~r"lib/tune_web/templates/.*(eex)$"
+      ~r"lib/future_made_concerts_web/(live|views)/.*(ex)$",
+      ~r"lib/future_made_concerts_web/templates/.*(eex)$"
     ]
   ]
 

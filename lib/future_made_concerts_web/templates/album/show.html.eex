@@ -1,0 +1,62 @@
+<%= case @album do %>
+  <% :not_fetched -> %>
+    <div class="full-screen-notice">
+      <p>Album not available.</p>
+    </div>
+  <% _album -> %>
+    <article class="item" data-test-id="<%= @album.id %>">
+      <section class="details">
+        <div class="artwork">
+          <div class="play-button" phx-click="play" phx-value-uri="<%= @album.uri %>">
+            <%= render FutureMadeConcertsWeb.PlayerView, "icon_play.html", []%>
+          </div>
+          <%= img_tag artwork(@album), alt: @album.name %>
+        </div>
+        <div class="meta">
+          <%= content_tag :h2 do %>
+            <%= authors(@album, @socket) %>
+          <% end %>
+          <%= content_tag :h1, @album.name %>
+          <%= genre(@album) %>
+          <%= content_tag :p do %>
+            <%= content_tag :span, Album.release_year(@album), class: "release-date" %>
+            ·
+            <%= content_tag :span, total_duration(@album), class: "total-duration" %>
+          <% end %>
+          <div class="reference-links">
+            <%= link to: @album.spotify_url, target: "_blank", class: "svg-link spotify" do %>
+              <%= render FutureMadeConcertsWeb.TrackView, "icon_spotify.html", [] %>
+              <%= content_tag :span, gettext("Open in Spotify"), class: "visually-hidden" %>
+            <% end %>
+            <%= link to: Link.last_fm(@album), target: "_blank", class: "svg-link last-fm" do %>
+              <%= render FutureMadeConcertsWeb.TrackView, "icon_last_fm.html", [] %>
+              <%= content_tag :span, gettext("Open in Last.fm"), class: "visually-hidden" %>
+            <% end %>
+            <%= link to: Link.youtube(@album), target: "_blank", class: "svg-link youtube" do %>
+              <%= render FutureMadeConcertsWeb.TrackView, "icon_youtube.html", [] %>
+              <%= content_tag :span, gettext("Open in YouTube"), class: "visually-hidden" %>
+            <% end %>
+          </div>
+        </div>
+      </section>
+      <section class="items">
+        <div class="tracklist">
+          <%= if Album.has_multiple_discs?(@album) do %>
+            <%= for {disc, tracks} <- Album.grouped_tracks(@album) do %>
+                <p><%= gettext("Disc %{disc_number}", disc_number: disc)%></p>
+                <%= render TrackView, "list.html", tracks: tracks, artist: Album.main_artist(@album), album: @album, now_playing: @now_playing %>
+            <% end %>
+          <% else %>
+            <%= render TrackView, "list.html", tracks: @album.tracks, artist: Album.main_artist(@album), album: @album, now_playing: @now_playing %>
+          <% end %>
+        </div>
+      </section>
+      <%= if Album.has_copyrights?(@album) do %>
+        <section class="copyrights">
+          <%= for copyright <- @album.copyrights do %>
+            <p><%= copyright_icon(copyright) %> <%= copyright.text %></p>
+          <% end %>
+        </section>
+      <% end %>
+    </article>
+  <% end %>

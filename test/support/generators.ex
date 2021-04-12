@@ -1,8 +1,8 @@
-defmodule Tune.Generators do
+defmodule FutureMadeConcerts.Generators do
   @moduledoc false
   import StreamData
 
-  alias Tune.Spotify.Schema.{
+  alias FutureMadeConcerts.Spotify.Schema.{
     Album,
     Artist,
     Copyright,

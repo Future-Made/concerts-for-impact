@@ -8,16 +8,26 @@
 use Mix.Config
 
 # Configures the endpoint
-config :tune, TuneWeb.Endpoint,
+config :FutureMadeConcerts, FutureMadeConcertsWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "e2NnkG7ooENrurt7RUM9EtxWsHaMoRZRd/zSSJ4/PiikAuYhsipmPM+hrnufoeBZ",
-  render_errors: [view: TuneWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: Tune.PubSub,
+  render_errors: [view: FutureMadeConcertsWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: FutureMadeConcerts.PubSub,
   live_view: [signing_salt: "Op07Dt9x"]
 
-config :tune,
-  spotify_session: Tune.Spotify.Session.HTTP,
-  spotify_client: Tune.Spotify.Client.HTTP
+config :FutureMadeConcerts, FutureMadeConcerts.Repo,
+  database: "future_made_concerts_dev",
+  username: "postgres",
+  password: "postgres",
+  hostname: "localhost"
+
+config :FutureMadeConcerts, ecto_repos: [FutureMadeConcerts.Repo]
+# Configures the endpoint
+
+
+config :FutureMadeConcerts,
+  spotify_session: FutureMadeConcerts.Spotify.Session.HTTP,
+  spotify_client: FutureMadeConcerts.Spotify.Client.HTTP
 
 # Configures Elixir's Logger
 config :logger, :console,

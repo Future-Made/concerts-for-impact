@@ -1,0 +1,46 @@
+defmodule FutureMadeConcertsWeb.ArtistView do
+  @moduledoc false
+  use FutureMadeConcertsWeb, :view
+
+  @default_artwork "https://via.placeholder.com/300"
+  @default_medium_thumbnail "https://via.placeholder.com/150"
+
+  alias FutureMadeConcerts.Spotify.Schema.{Album, Artist}
+  alias FutureMadeConcerts.Link
+  alias FutureMadeConcertsWeb.PaginationView
+
+  @spec artwork(Artist.t()) :: String.t()
+  defp artwork(%Artist{thumbnails: thumbnails}),
+    do: Map.get(thumbnails, :medium, @default_artwork)
+
+  @spec thumbnail(Album.t()) :: String.t()
+  defp thumbnail(%Album{thumbnails: thumbnails}) do
+    Enum.find_value(thumbnails, @default_medium_thumbnail, fn {size, url} ->
+      if size in [:medium, :large], do: url
+    end)
+  end
+
+  @spec total_albums(Artist.t()) :: String.t()
+  defp total_albums(artist) do
+    ngettext("1 album", "%{count} albums", artist.total_albums)
+  end
+
+  defp album_groups do
+    [
+      all: gettext("All"),
+      album: gettext("Album"),
+      single: gettext("Single"),
+      appears_on: gettext("Appears On"),
+      compilation: gettext("Compilation")
+    ]
+  end
+
+  @spec genre(Artist.t()) :: nil | String.t()
+  defp genre(%Artist{genres: []}), do: nil
+
+  defp genre(%Artist{genres: genres}) do
+    content_tag :h3, class: "genre" do
+      Enum.join(genres, ", ")
+    end
+  end
+end

@@ -1,4 +1,4 @@
-name: Tune CI
+name: FutureMadeConcerts CI
 
 on:
   push:

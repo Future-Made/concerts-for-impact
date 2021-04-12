@@ -1,9 +1,9 @@
-defmodule Tune.MixProject do
+defmodule FutureMadeConcerts.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :tune,
+      app: :FutureMadeConcerts,
       version: "0.1.0",
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -21,7 +21,7 @@ defmodule Tune.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Tune.Application, []},
+      mod: {FutureMadeConcerts.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -62,7 +62,10 @@ defmodule Tune.MixProject do
       {:credo, "~> 1.5.0-rc.4", only: [:dev, :test], runtime: false},
       {:mox, "~> 1.0", only: :test},
       {:stream_data, "~> 0.5.0", only: :test},
-      {:eventually, "~> 1.1", only: :test}
+      {:eventually, "~> 1.1", only: :test},
+      {:phoenix_ecto, "~> 4.1"},
+      {:ecto_sql, "~> 3.4"},
+      {:postgrex, ">= 0.0.0"}
     ]
   end
 
@@ -90,16 +93,16 @@ defmodule Tune.MixProject do
       main: "readme",
       extras: ["README.md"],
       before_closing_body_tag: &monospace_stylesheet/1,
-      nest_modules_by_prefix: [Tune.Spotify.Schema, Tune.Spotify.Session, Tune.Spotify.Client],
+      nest_modules_by_prefix: [FutureMadeConcerts.Spotify.Schema, FutureMadeConcerts.Spotify.Session, FutureMadeConcerts.Spotify.Client],
       groups_for_modules: [
         "Spotify Schemas": ~r/Schema/,
         "Spotify Session": ~r/Session/,
         "Spotify Client API": ~r/Client/,
         Authentication: ~r/Auth/,
-        UI: TuneWeb.ExplorerLive,
-        Routing: TuneWeb.Router.Helpers,
-        Core: [Tune.Config, Tune.Gettext, Tune.Duration],
-        Integrations: Tune.Link
+        UI: FutureMadeConcertsWeb.ExplorerLive,
+        Routing: FutureMadeConcertsWeb.Router.Helpers,
+        Core: [FutureMadeConcerts.Config, FutureMadeConcerts.Gettext, FutureMadeConcerts.Duration],
+        Integrations: FutureMadeConcerts.Link
       ]
     ]
   end
