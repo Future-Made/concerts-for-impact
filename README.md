@@ -1,53 +1,95 @@
-# Tune
+# FutureMadeConcerts
 
-![CI Status](https://github.com/fully-forged/tune/workflows/Tune%20CI/badge.svg)
+![CI Status](https://github.com/fully-forged/FutureMadeConcerts/workflows/FutureMadeConcerts%20CI/badge.svg)
 
 ## About
 
-Tune is a Spotify browser and remote application with a focus on performance
+FutureMade Concerts, Collaborative-Mode (collabomo.de) is a web app, initially integrated with Spotify with a non-existing inclusion of audience-side initiative-takings:
+
+Via their expressions of demands and offers for a non yet announced or planned, future performance.
+
+This is not a regular ticket, or a ticket at all. It is an attempt to start opening a direct communication channel between many stakeholders around an art event. 
+
+(initially for online concerts then exhibitions and theaters, news content/topics for journalists and translations will be made, effectively demandable.)
+
+One important to especially mention here. Audiences will be also enabled on including their time/skills/experiences as replacement or supplamentary part for their offers.
+
+People will be able to decide unlimited number of causes and will be able to set a charitable reserve from the total amount they offer.
+
+In terms of monetary or time-wise values. Both will be integer. Time-wise, skill/experience offerings will be in minutes. 
+
+As is, Euro is included as currency. 
+
+Those will be diversified and will be set at preferences levels if desired.
+
+On the other hand, time-wise values will probably become a currency themselves to be exchanged on a blockchain. 
+
+Those commons will be transferred from artists/collectives to others, including other creatives, non-gov-orgs, research institutes etc. 
+
+Projects that audience as well willing to support will be planned. If audience desires, could add more time or connect those artists and local/remote NGOs on a creative solution design for including new aspects to the desired impact locality and time.
+
+Hence globally open projects will be empowered by multi-disciplinary groups on the achievement of bridging cultures, increasing skills and education of current and future globals.
+
+### Demand Event, Upon Stream
+
+This concept was in fact, a proposed feature to Spotify. We've found this is the easiest way to realize this positive impact via existing streaming service providers' inclusion of such features in the near and non-near futures.
+
+As part of Demand-Aware and Augmented Framework, we are implementing Expression of Demand
+
+![Pathway to form](https://raw.githubusercontent.com/Future-Made/concerts-for-impact/screenshots_demand_form/ "Pathway to form")
+
+To have a solid start, we've forked fully-forged/tune to put Spotify to the center of the prototype.
+
+Hence, will as well extend this README via including the backbone projects' updates as well.
+
+We thank Claudio Ortolina for the good feedback and wishes.
+
+README of Tune :
+
+It is a Spotify browser and remote application with a focus on performance
 and integration with other services.
 
-You can see it in action at <https://tune.fullyforged.com>.
+You can see it in action at <https://FutureMadeConcerts.fullyforged.com>.
 
 ### Album details
 
-![Album details](https://raw.githubusercontent.com/fully-forged/tune/main/screenshots/album-details.jpg "Album details")
+![Album details](https://raw.githubusercontent.com/fully-forged/FutureMadeConcerts/main/screenshots/album-details.jpg "Album details")
 
 ### Global Search
 
-![Search](https://raw.githubusercontent.com/fully-forged/tune/main/screenshots/search.jpg "Search")
+![Search](https://raw.githubusercontent.com/fully-forged/FutureMadeConcerts/main/screenshots/search.jpg "Search")
 
 ### Artist details
 
-![Artist details](https://raw.githubusercontent.com/fully-forged/tune/main/screenshots/artist-details.jpg "Artist details")
+![Artist details](https://raw.githubusercontent.com/fully-forged/FutureMadeConcerts/main/screenshots/artist-details.jpg "Artist details")
 
 ### Top albums and recommendations
 
-![Top albums and recommendations](https://raw.githubusercontent.com/fully-forged/tune/main/screenshots/top-albums-and-recommendations.jpg "Top albums and recommendations")
+![Top albums and recommendations](https://raw.githubusercontent.com/fully-forged/FutureMadeConcerts/main/screenshots/top-albums-and-recommendations.jpg "Top albums and recommendations")
 
 ### Release radar
 
-![Release radar](https://raw.githubusercontent.com/fully-forged/tune/main/screenshots/release-radar.jpg "Release radar")
+![Release radar](https://raw.githubusercontent.com/fully-forged/FutureMadeConcerts/main/screenshots/release-radar.jpg "Release radar")
 
 ## Usage
 
 ### Scope and features
 
-In many ways Tune copies the official Spotify application: many views (e.g.
+In many ways FutureMadeConcerts copies the official Spotify application: many views (e.g.
 search or details for artists and albums) are tightly based on the equivalent
 sections in the Spotify application. This is an intentional choice aimed at
 reducing friction between applications.
 
-Tune differs in these areas:
+FutureMadeConcerts differs in these areas:
 
-- Performance: Tune is extremely light, as for the most part is a
+- Performance: FutureMadeConcerts is extremely light, as for the most part is a
   server-rendered application, which makes it suitable to use on a wide range
   of devices and operating systems (think Linux on a Raspberry PI). Most of its
   functionality works without JavaScript and is exposed via a proper URL.
-- Integration: Tune tries to connect items like artists, albums or songs to
+- Integration: FutureMadeConcerts tries to connect items like artists, albums or songs to
   other sources of information, so that for example you can use convenient
   links to read the history of a band on Wikipedia.
-- Recommendations: Tune offers suggestions based on a combination of what's
+- Recommendations: FutureMadeConcerts offers suggestions based on a combination of what's
   provided by Spotify and some custom logic (loosely based on what you've been
   listening in a specific time period). The logic is an almost direct porting of
   how I search for new music, so it might not work for you.
@@ -79,16 +121,16 @@ Tune differs in these areas:
 | Embedded audio player     |         ❌         | ✅ (on some browsers) |
 
 Due to limitations imposed by Spotify, users with free subscriptions cannot use the embedded
-audio player, nor they can control other devices via Tune's UI. If you have a
+audio player, nor they can control other devices via FutureMadeConcerts's UI. If you have a
 free subscription, those UI elements are not visible as they're ineffective.
 
-For users with Premium subscriptions, Tune can be used as a standalone player by selecting the
+For users with Premium subscriptions, FutureMadeConcerts can be used as a standalone player by selecting the
 appropriate option in the device switch section in the mini player (note that [only some browsers are
 supported](https://developer.spotify.com/documentation/web-playback-sdk/#supported-browsers)).
 
 ### Data retention and privacy
 
-Tune doesn't have any persistent storage: upon successful authentication,
+FutureMadeConcerts doesn't have any persistent storage: upon successful authentication,
 credentials are only stored in your browser's cookies and kept in memory in the application.
 
 Credentials are cleared at most 30 seconds after you close the last browser
@@ -108,19 +150,19 @@ specific territories.
 
 ### Issues with devices and playback
 
-If you use Tune in combination with official Spotify clients, you will notice
+If you use FutureMadeConcerts in combination with official Spotify clients, you will notice
 that if nothing is playing, after a while the miniplayer controls stop
 responding and you can't even play any song. This is due to a quirk in the
 Spotify devices API, which reports client devices as still connected.
 
-If you're running Tune on a platform where it can load the built-in audio
+If you're running FutureMadeConcerts on a platform where it can load the built-in audio
 player, you can just refresh the page for the player to reload, which has the
 side effect of "waking up" all other clients as well. At that point, you can
 select them from the device switcher and resume normal operation.
 
-If you're running Tune on a mobile device, your only option is to open the
+If you're running FutureMadeConcerts on a mobile device, your only option is to open the
 dormant client application, do a quick play/pause to wake it up and go back
-to Tune.
+to FutureMadeConcerts.
 
 More information on the related [Spotify documentation
 page](https://developer.spotify.com/documentation/web-api/guides/using-connect-web-api/#devices-not-appearing-on-device-list).
@@ -163,25 +205,25 @@ can run it with `cd assets` and then `npm test`.
 
 ### Documentation
 
-Available at <https://tune-docs.fullyforged.com>, gets automatically updated
+Available at <https://FutureMadeConcerts-docs.fullyforged.com>, gets automatically updated
 with every push on the `main` branch.
 
 ### Application structure
 
-The `Tune` namespace defines the domain logic responsible to interact with the
+The `FutureMadeConcerts` namespace defines the domain logic responsible to interact with the
 Spotify API and maintain running sessions for each logged-in user.
 
-The `TuneWeb` namespace defines authentication endpoints and the main
-`LiveView` (`TuneWeb.ExplorerLive`) that powers the entire user interface.
+The `FutureMadeConcertsWeb` namespace defines authentication endpoints and the main
+`LiveView` (`FutureMadeConcertsWeb.ExplorerLive`) that powers the entire user interface.
 
-Tune assumes multiple browser sessions for the same user, which is why it
-defines a `Tune.Spotify.Session` behaviour with `Tune.Spotify.Session.HTTP`
+FutureMadeConcerts assumes multiple browser sessions for the same user, which is why it
+defines a `FutureMadeConcerts.Spotify.Session` behaviour with `FutureMadeConcerts.Spotify.Session.HTTP`
 as its main runtime implementation.
 
 Each worker is responsible to proxy interaction with the Spotify API, 
 periodically poll for data changes, and broadcast corresponding events.
 
-When a user opens a browser session, `TuneWeb.ExplorerLive` either starts or
+When a user opens a browser session, `FutureMadeConcertsWeb.ExplorerLive` either starts or
 simply reuses a worker named with the same session ID.
 
 Each worker monitors its subscribers, so that it can shutdown when a user
@@ -196,7 +238,7 @@ This architecture ensures that:
 
 ### Telemetry
 
-The application exposes `TuneWeb.Telemetry` module with definitions for relevant metrics.
+The application exposes `FutureMadeConcertsWeb.Telemetry` module with definitions for relevant metrics.
 
 An instance of
 [Phoenix.LiveDashboard](https://github.com/phoenixframework/phoenix_live_dashboard/)
@@ -233,8 +275,8 @@ Icons:
 
 ## Code of Conduct
 
-Available at <https://github.com/fully-forged/tune/blob/main/CODE_OF_CONDUCT.md>.
+Available at <https://github.com/fully-forged/FutureMadeConcerts/blob/main/CODE_OF_CONDUCT.md>.
 
 ## License
 
-Available at <https://github.com/fully-forged/tune/blob/main/LICENSE>.
+Available at <https://github.com/fully-forged/FutureMadeConcerts/blob/main/LICENSE>.
