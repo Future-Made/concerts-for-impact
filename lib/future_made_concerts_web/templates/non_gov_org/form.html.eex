@@ -1,0 +1,46 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :name %>
+  <%= text_input f, :name %>
+  <%= error_tag f, :name %>
+
+  <%= label f, :description %>
+  <%= textarea f, :description %>
+  <%= error_tag f, :description %>
+
+  <%= label f, :headquarters %>
+  <%= text_input f, :headquarters %>
+  <%= error_tag f, :headquarters %>
+
+<div class="form-group">
+
+  <%=
+    multiselect_checkboxes(
+      f,
+      :causes,
+      Enum.map(@causes, fn c -> { c.name, c.id } end),
+      selected: Enum.map(@causes,&(&1.id))
+    )
+  %>
+</div>
+
+
+
+  <%= label f, :image_url %>
+  <%= text_input f, :image_url %>
+  <%= error_tag f, :image_url %>
+
+  <%= label f, :website_url %>
+  <%= text_input f, :website_url %>
+  <%= error_tag f, :website_url %>
+
+
+  <div>
+    <%= submit "Save" %>
+  </div>
+<% end %>

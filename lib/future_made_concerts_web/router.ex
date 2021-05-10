@@ -45,6 +45,9 @@ defmodule FutureMadeConcertsWeb.Router do
     live "/albums/:album_id", ExplorerLive, :album_details
     live "/shows/:show_id", ExplorerLive, :show_details
     live "/episodes/:episode_id", ExplorerLive, :episode_details
+
+    resources "/non_gov_orgs", NonGovOrgController
+    resources "/broadcasters", BroadcasterController
   end
 
   # Other scopes may use custom stacks.

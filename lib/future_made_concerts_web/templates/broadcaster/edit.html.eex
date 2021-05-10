@@ -1,0 +1,5 @@
+<h1>Edit Broadcaster</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.broadcaster_path(@conn, :update, @broadcaster)) %>
+
+<span><%= link "Back", to: Routes.broadcaster_path(@conn, :index) %></span>

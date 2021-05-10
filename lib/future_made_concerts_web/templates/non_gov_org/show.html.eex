@@ -1,0 +1,44 @@
+<h1>Show Non gov org</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @non_gov_org.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @non_gov_org.description %>
+  </li>
+
+  <li>
+    <strong>Headquarters:</strong>
+    <%= @non_gov_org.headquarters %>
+  </li>
+
+  <li>
+    <strong>Number of followers:</strong>
+    <%= @non_gov_org.number_of_followers %>
+  </li>
+
+  <li>
+    <strong>Number of open projects:</strong>
+    <%= @non_gov_org.number_of_open_projects %>
+  </li>
+
+  <li>
+    <strong>Image url:</strong>
+    <%= @non_gov_org.image_url %>
+  </li>
+
+  <li>
+    <strong>Website url:</strong>
+    <%= @non_gov_org.website_url %>
+  </li>
+
+
+</ul>
+
+<span><%= link "Edit", to: Routes.non_gov_org_path(@conn, :edit, @non_gov_org) %></span>
+<span><%= link "Back", to: Routes.non_gov_org_path(@conn, :index) %></span>

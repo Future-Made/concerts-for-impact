@@ -1,0 +1,41 @@
+<h1>Listing Non gov orgs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Causes</th>
+      <th>Description</th>
+      <th>Headquarters</th>
+      <th>Number of volunteers at fm</th>
+      <th>Number of followers</th>
+      <th>Number of open projects</th>
+      <th>Image url</th>
+      <th>Website url</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for non_gov_org <- @non_gov_orgs do %>
+    <tr>
+      <td><%= non_gov_org.name %></td>
+      <td><% non_gov_org.causes %></td>
+      <td><%= non_gov_org.description %></td>
+      <td><%= non_gov_org.headquarters %></td>
+      <td><%= non_gov_org.number_of_followers %></td>
+      <td><%= non_gov_org.number_of_open_projects %></td>
+      <td><%= non_gov_org.image_url %></td>
+      <td><%= non_gov_org.website_url %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.non_gov_org_path(@conn, :show, non_gov_org) %></span>
+        <span><%= link "Edit", to: Routes.non_gov_org_path(@conn, :edit, non_gov_org) %></span>
+        <span><%= link "Delete", to: Routes.non_gov_org_path(@conn, :delete, non_gov_org), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Non gov org", to: Routes.non_gov_org_path(@conn, :new) %></span>

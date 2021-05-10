@@ -1,0 +1,33 @@
+<h1>Show Broadcaster</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @broadcaster.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @broadcaster.description %>
+  </li>
+
+  <li>
+    <strong>Follower count:</strong>
+    <%= @broadcaster.follower_count %>
+  </li>
+
+  <li>
+    <strong>City:</strong>
+    <%= @broadcaster.city %>
+  </li>
+
+  <li>
+    <strong>Country:</strong>
+    <%= @broadcaster.country %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.broadcaster_path(@conn, :edit, @broadcaster) %></span>
+<span><%= link "Back", to: Routes.broadcaster_path(@conn, :index) %></span>

@@ -1,0 +1,5 @@
+<h1>Edit Non gov org</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.non_gov_org_path(@conn, :update, @non_gov_org)) %>
+
+<span><%= link "Back", to: Routes.non_gov_org_path(@conn, :index) %></span>
